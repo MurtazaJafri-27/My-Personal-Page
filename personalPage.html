@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title></title>
+    <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: lightgrey;
+            margin: 0;
+        }
+
+        .topbar
+        {
+            width: 400px;
+            height: 18vh;
+            background-color: red;
+            display: flex;
+            display: hidden;
+            position: fixed;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .bottombar
+        {
+            width: 400px;
+            height: 18vh;
+            background-color: lightgrey;
+            position: fixed;
+            display: hidden;
+            bottom: 0;
+        }
+
+        .topnav
+        {
+            padding: 0;
+            width: 25vw;
+            height: 12vh;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 20px;
+            z-index: 1;
+            top: -20vh;
+            position: fixed;
+            box-shadow: 2px 2px 5px grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .bottomnav
+        {
+            width: 25vw;
+            height: 12vh;
+            background-color: white;
+            position: fixed;
+            border: 2px solid black;
+            border-radius: 20px;
+            position: fixed;
+            z-index: 1;
+            bottom: -20vh;
+            box-shadow: 2px 2px 5px grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .topbar:hover .topnav
+        {
+            transform: translateY(23vh);
+        }
+
+        .bottombar:hover .bottomnav
+        {
+            transform: translateY(-27vh);
+        }
+
+        .socials{
+           padding: 0;
+           margin: 0;
+           list-style-type: none;
+           gap: 25px;
+           display: inline-flex;
+           color: blueviolet;
+        }
+
+        .socialLi{
+            display: inline-flex;
+            align-items: center;
+        }
+
+        h6{
+            margin: 0;
+            margin-bottom: 15px;
+            margin-top: 5px;
+            text-shadow: 1px 1px grey;
+            color: red;
+        }
+
+        i{
+            margin-right: 4px;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        li:hover{
+            scale: 1.1;
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+        }
+
+        span{
+            margin-right: 4px;
+        }
+
+        .bgTopBar{
+            background-color: red;
+            height: 18vh;
+            width: 100%;
+            top: 0;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+             box-shadow: 2px 2px 5px black;
+        }
+
+        .whiteStrip
+        {
+            background-color: white;
+            height: 4vh;
+            width: 100%;
+            position: fixed;
+        }
+
+        h1{
+            color: white;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 0;
+            margin-left: 3vw;
+            margin-bottom: 7vh;
+
+            transition: color 0.3s ease-in-out;
+        }
+
+        .leftBar{
+            width: 30vh;
+            height: 60vh;
+            background-color: red;
+            border-radius: 20px;
+            border: 2px solid black;
+            box-shadow: 2px 2px 5px black;
+            
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            left: 3vw;
+            top: 25vh;
+            padding: 0.2% 0;
+            padding-left: 0.5%;
+            color: white;
+
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 1px;
+            overflow: hidden;
+
+            transition: transform 0.3s ease-in-out;
+        }
+
+        span:hover{
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+            color: blueviolet;
+        }
+
+        .leftBar:hover{
+            scale: 1.05;
+            transition: ease-in-out 0.3s;
+            transition: ease-out 0.3s;
+        }
+
+        .leftBar:hover * {
+            scale: 1;
+        }
+
+        h3{
+            margin: 0;
+            position: flex-start;
+        }
+
+        .semPoints{
+            margin-left: -20px;
+            display: none;
+        }
+        .semPoints2{
+            margin-left: -20px;
+            display: none;
+        }
+
+        .toggleSem1:checked ~ ul .semPoints{
+            display: list-item;
+        }
+        .toggleSem2:checked ~ ul .semPoints2{
+            display: list-item;
+        }
+
+        .toggleSem1 {
+  margin-right: 8px;
+}
+.toggleSem2 {
+  margin-right: 8px;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+ol{
+    margin-bottom: 10px;
+}
+h6{
+    position: flex-start;
+}
+
+        .gallery{
+    display: flex;
+    flex-direction: flex-start;
+    margin-left: 30vw;
+    position: absolute;
+    margin-top: 30vh;
+    z-index: -1;
+    margin-right: 0;
+}
+
+        img{
+            margin: 2vh 0;
+            margin-left: 4vw;
+            margin-right: 0;
+            border: red solid 3px;
+            border-radius: 10px;
+        }
+
+        .gallery img{
+            transform: translateX(-12vw);
+        }
+
+        h2{
+            position: fixed;
+            top: 20vh;
+            color: white;
+            margin-left: 20vw;
+            text-shadow: 2px 2px 5px black;
+             font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+             font-style: normal;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="bgTopBar"><h1><span class="material-symbols-outlined">docs</span><span>Murtaza's Page</span></h1><div class="whiteStrip"></div></div>
+    <div class = "topbar"><div class="whiteStrip"></div><nav class="topnav">
+        <h6>My Socials</h6>
+        <ul class="socials">
+            <li class="socialLi"><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/murtaza_jafri27/">Instagram</a></li>
+            <li class="socialLi"><i class="fa-brands fa-youtube"></i><a href="https://www.youtube.com">Youtube</a></li>
+            <li class="socialLi"><i class="fa-brands fa-tiktok"></i><a href="https://www.tiktok.com/@kindarevulsion?_r=1&_t=ZS-92DGu5VY3uv">TikTok</a></li>
+        </ul>
+    </nav></div>
+    <div class = "bottombar"><nav class="bottomnav">
+        <h6>SZABIST</h6>
+        <ul class="socials">
+            <li class="socialLi"><span class="material-symbols-outlined">assignment_turned_in</span><a href=>Classroom</a></li>
+            <li class="socialLi"><i class=""></i><a href>NONE</a></li>
+            <li class="socialLi"><i class=""></i><a href>NONE</a></li>
+        </ul>
+    </nav></div>
+    <nav class="leftBar">
+        <ol>
+    <li>
+     <input type="checkbox" class="toggleSem1" id="toggleSem1">
+    <label for="toggleSem1"><h3>Semester 1</h3></label>
+
+    <ul>
+      <li class="semPoints"><a href="https://drive.google.com/drive/folders/18gO5pQlRdWc-2Sqrd8RaEWBHTiUIRz6j?usp=drive_link">Calculus</a></li>
+      <li class="semPoints">FoP</li>
+      <li class="semPoints">ITC</li>
+      <li class="semPoints">Applied Physics</li>
+      <li class="semPoints">English</li>
+      <li class="semPoints">FoP (LAB)</li>
+      <li class="semPoints">ITC (LAB)</li>
+      <li class="semPoints">Applied Physics (LAB)</li>
+    </ul>
+  </li>
+     <li>
+     <input type="checkbox" class="toggleSem2" id="toggleSem2">
+    <label for="toggleSem2"><h3>Semester 2</h3></label>
+
+    <ul>
+      <li class="semPoints2">POKEMON</li>
+      <li class="semPoints2">GOD OF WAR</li>
+      <li class="semPoints2"></li>
+      <li class="semPoints2"></li>
+      <li class="semPoints2"></li>
+      <li class="semPoints2"></li>
+      <li class="semPoints2"></li>
+      <li class="semPoints2"></li>
+    </ul>
+  </li>
+  </ol>
+    </nav>
+    <div class="gallery">
+        <h2 color="white">MY ARTWORK</h2>
+        <img src="aizen.png" alt="Aizen" width="320px" height="170px">
+        <img src="makoto.png" alt="Makoto" width="320px" height="170px">
+        <img src="frieren.jpg" alt="Frieren" width="180px" height="270px">
+    </div>
+</body>
+</html>
